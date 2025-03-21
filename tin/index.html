@@ -1,0 +1,23 @@
+
+<html>
+<head>
+    <title>Rocket Data Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for Visualizations -->
+    <script defer src="/static/script.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Rocket Data Visualization</h1>
+
+    <label for="charSelect">Select a visualization:</label>
+    <select id="charSelect">
+        <option value="missions">Total Missions per Rocket</option> 
+        <option value="reusability">Reusability Breakdown</option>
+        <option value="expendable">Expendable Breakdown</option>
+    </select>
+    
+    <canvas id="chartCanvas"></canvas> <!-- Bar Chart -->
+    <br>
+    <canvas id="chartCanvas2"></canvas> <!-- Line Chart -->
+</body>
+</html>

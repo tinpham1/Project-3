@@ -1,0 +1,13 @@
+
+#chartContainer {
+    width: 80%;  
+    max-width: 900px;
+    height: auto; 
+    max-height: 500px; 
+    margin: auto; 
+}
+
+canvas {
+    max-width: 100%; /* Prevent canvas from stretching */
+    max-height: 500px; /* Set a max height */
+}

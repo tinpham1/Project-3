@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_file
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 # Function to connect to SQLite database
 def get_db_connection():
@@ -12,7 +12,7 @@ def get_db_connection():
 # Home route
 @app.route("/")
 def home():
-    return jsonify({"message": "Flask is running!"})
+    return send_file("index.html")
 
 # Fetch all rockets
 @app.route('/rockets', methods=['GET'])
@@ -87,6 +87,28 @@ def get_expendable_rockets():
 
     expendable_rockets_list = [dict(row) for row in expendable_rockets]
     return jsonify(expendable_rockets_list)
+
+# Fetch Missions per Year
+@app.route('/missions-per-year', methods=['GET'])
+def get_missions_per_year():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # Query to count missions per year from the SQLite database
+    cursor.execute("""
+        SELECT strftime('%Y', date) AS year, COUNT(*) AS mission_count
+        FROM missions
+        GROUP BY year
+        ORDER BY year ASC;
+    """)
+    
+    missions_per_year = cursor.fetchall()
+    conn.close()
+
+    # Convert to JSON format
+    data = [{"year": row["year"], "mission_count": row["mission_count"]} for row in missions_per_year]
+    
+    return jsonify(data)
 
 # Print Available Routes
 print(app.url_map)  
