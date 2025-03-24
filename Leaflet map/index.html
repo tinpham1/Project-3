@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Programs Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+    #map {
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // Create map
+    var map = L.map('map').setView([20, 0], 2); // Center on the globe with zoom level 2
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Data for countries with space programs and their coordinates
+    var countries = [
+      {name: 'United States', lat: 37.0902, lon: -95.7129},
+      {name: 'Russia', lat: 55.7558, lon: 37.6176},
+      {name: 'China', lat: 35.8617, lon: 104.1954},
+      {name: 'India', lat: 20.5937, lon: 78.9629},
+      {name: 'Japan', lat: 36.2048, lon: 138.2529},
+      {name: 'Brazil', lat: -14.2350, lon: -51.9253},
+      {name: 'South Korea', lat: 35.9078, lon: 127.7669},
+      {name: 'Israel', lat: 31.7683, lon: 35.2137},
+      {name: 'United Arab Emirates', lat: 23.4241, lon: 53.8478},
+      {name: 'United Kingdom', lat: 51.5074, lon: -0.1278},
+      {name: 'Argentina', lat: -38.4161, lon: -63.6167},
+      {name: 'Australia', lat: -25.2744, lon: 133.7751},
+      {name: 'South Africa', lat: -30.5595, lon: 22.9375}
+    ];
+
+    // Add markers to map with title
+    countries.forEach(function(country) {
+      L.marker([country.lat, country.lon], {
+        title: 'Space Program in ' + country.name // Title for the marker
+      }).addTo(map)
+        .bindPopup('<b>' + country.name + '</b>');
+    });
+  </script>
+</body>
+</html>
