@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_file
+from flask import Flask, jsonify, request, send_file, render_template
 import sqlite3
 
 app = Flask(__name__, static_folder='static')
@@ -6,13 +6,13 @@ app = Flask(__name__, static_folder='static')
 # Function to connect to SQLite database
 def get_db_connection():
     conn = sqlite3.connect("space_data.db")
-    conn.row_factory = sqlite3.Row  # Allows dictionary-like row access
+    conn.row_factory = sqlite3.Row 
     return conn
 
 # Home route
 @app.route("/")
 def home():
-    return send_file("index.html")
+    return render_template("index.html")
 
 # Fetch all rockets
 @app.route('/rockets', methods=['GET'])

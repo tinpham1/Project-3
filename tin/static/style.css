@@ -8,6 +8,15 @@
 }
 
 canvas {
-    max-width: 100%; /* Prevent canvas from stretching */
-    max-height: 500px; /* Set a max height */
+    max-width: 100%; 
+    max-height: 500px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
 }
