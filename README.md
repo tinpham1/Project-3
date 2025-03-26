@@ -5,7 +5,7 @@ The Space Debris Tracker project is designed to track and visualize space debris
 The primary goal of the project is to allow users to interactively explore the historical trends of space debris, its classification, and the amount of debris over time. It is aimed at raising awareness about the growing issue of space debris and its potential impact on satellite operations and space exploration.
 
 ## Instructions
-Running the Project
+## Running the Project
 Clone the repository to your local machine using the following command:
 
 bash
