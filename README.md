@@ -28,7 +28,13 @@ The goal is to help users of all levels understand how satellite launches, polic
    git clone https://github.com/your-username/stars-and-stats.git
    cd stars-and-stats
 
+2. Open index.html in a browser
+OR right-click and select "Open with Live Server" in VS Code for full navigation.
 
-
+3. Navigate between pages:
+> index.html – Project overview
+> debris.html – Debris over time chart
+> lifespan.html – Satellite lifespan visualization
+> country.html – Country breakdown chart
 
 
