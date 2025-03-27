@@ -1,0 +1,38 @@
+
+<html>
+<head>
+    <title>From Launch to Legacy: Tracking US Spacecraft Lifecycles</title>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script defer src="{{ url_for('static', filename='script.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>From Launch to Legacy: Tracking US Spacecraft Lifecycles</h1>
+
+    <label for="charSelect">Select a visualization:</label>
+    <select id="charSelect">
+        <option value="missions">Total Missions per Rocket</option> 
+        <option value="reusability">Reusability Breakdown</option>
+        <option value="expendable">Expendable Breakdown</option>
+    </select>
+    <!-- Chart 1 -->
+    <canvas id="chartCanvas"></canvas>
+    <p id="chartDescription1"></p>
+    <br>
+    <!-- Chart 2 -->
+    <canvas id="chartCanvas2"></canvas>
+    <p id="chartDescription2"></p>
+    <br>
+    <!-- API Routes -->
+    <p><b>API Routes</b></p>
+    <p>All Rockets: <a href="/rockets" target="_blank">/rockets</a><br>
+    Falcon 9 Block 5: <a href="rockets/Falcon%209%20Block%205" target="_blank">/rockets/Falcon 9 Block 5</a><br>
+    Active Rockets: <a href="/rockets/active" target="_blank">/rockets/active</a><br>
+    Retired Rockets: <a href="/rockets/retired" target="_blank">/rockets/retired</a><br>
+    Resuable Rockets: <a href="/rockets/reusable" target="_blank">/rockets/reusable</a><br>
+    Expendable Rockets: <a href="/rockets/expendable" target="_blank">/rockets/expendable</a><br>
+    Missions Per Year: <a href="/missions-per-year" target="_blank">/missions-per-year</a><br></p>
+</body>
+</html>
