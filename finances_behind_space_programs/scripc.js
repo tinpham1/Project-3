@@ -1,1 +1,0 @@
-title: 'Space Program in ' + country.name
