@@ -9,7 +9,7 @@ function updateChart() {
 
     // Set domain for the x and y scales
     x.domain(Object.keys(yearData).filter(key => key !== 'year')); // Exclude 'year' from x-axis
-    y.domain([0.2, 25]); // Explicitly set y-scale from 0.2B (200 million) to 25B (25 billion)
+    y.domain([0.2, 35]); // Explicitly set y-scale from 0.2B (200 million) to 25B (25 billion)
 
     // Remove existing bars and axes before drawing new ones
     chartGroup.selectAll(".bar").remove();

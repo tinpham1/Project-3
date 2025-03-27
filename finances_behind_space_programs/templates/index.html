@@ -156,7 +156,7 @@
 
       // Set domain for the x and y scales
       x.domain(Object.keys(yearData).filter(key => key !== 'year'));
-      y.domain([0, d3.max(Object.values(yearData).filter(value => !isNaN(value)))]);
+      y.domain([0, 35]);
 
       const bars = svg1.selectAll(".bar")
         .data(Object.entries(yearData).filter(([key, value]) => key !== 'year'));
