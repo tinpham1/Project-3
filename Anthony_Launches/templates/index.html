@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Launch Data Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script> <!-- Upgraded -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <h1>🚀 Space Launch Dashboard</h1>
+
+  <div id="filters">
+    <label for="companySelect">Filter by Company:</label>
+    <select id="companySelect">
+      <option value="All">All</option>
+    </select>
+
+    <label for="yearSelect">Filter by Year:</label>
+    <select id="yearSelect">
+      <option value="All">All</option>
+    </select>
+  </div>
+
+  <div class="chart-container">
+    <h3 class="chart-title">Launches Per Year</h3>
+    <div id="bar-chart"></div>
+  </div>
+
+  <div class="chart-container">
+    <h3 class="chart-title">Success vs Failure</h3>
+    <div id="pie-chart"></div>
+  </div>
+
+  <div class="chart-container">
+    <h3 class="chart-title">Launch Density by Company</h3>
+    <div id="bubble-chart"></div>
+  </div>
+
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
