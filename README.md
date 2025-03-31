@@ -1,4 +1,5 @@
-🚀 Rocket Launch Data Visualization
+🚀 <h1>Rocket Launch Data Visualization</h1>
+
 📚 Overview
 This project visualizes historical rocket launch data, highlighting trends in mission frequency, rocket reusability, operational longevity, space debris, launch success rates between public and private sectors, and overal global budgets for international space programs. The project leverages Flask for backend API management, Chart.js for data visualization, and SQLite to manage the rocket data. The goal is to provide an interactive and informative dashboard that allows users to explore key insights into the evolution of space launch vehicles and programs.
 
